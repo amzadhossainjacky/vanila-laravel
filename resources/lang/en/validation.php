@@ -130,8 +130,12 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'uemail' => [
+                'required' => 'The email field is required.',
+                'email' => 'The email must be a valid email address.',
+        ],
+        'upassword' => [
+                'required' => 'The password field is required.',
         ],
     ],
 

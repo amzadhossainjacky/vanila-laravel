@@ -11,42 +11,12 @@
 </head>
 
 <body>
-    <section class="nav-section">
-        <nav class="nav-design">
-            <div class="logo">
-                <h2>Vanila</h2>
-            </div>
-
-            <ul>
-                <li>
-                    <a href="index.html" class="active"> Home </a>
-                </li>
-                <li>
-                    <a href="#about-us"> About Us</a>
-                </li>
-                <li>
-                    <a href="courses.html"> Courses</a>
-                </li>
-                <li>
-                    <a href="notice.html"> Notice </a>
-                </li>
-                <li>
-                    <a href="contact.html"> Contact </a>
-                </li>
-                <li>
-                    <a href="login.html"> Sign In </a>
-                </li>
-                <li>
-                    <a href="register.html" class="n-btn"> Register </a>
-                </li>
-            </ul>
-        </nav>
-    </section>
-
+   
     {{-- yield show --}}
     @yield('banner')
     @yield('about')
-    
+    @yield('login')
+
     <footer>
         <div class="top-footer">
             <div class="container">
@@ -72,7 +42,7 @@
                                 <li><a href="#">Revision</a></li>
                             </ul>
                         </div>
-                        
+
                     </div>
                     <div class="col-lg-4">
                         <div class="footer-contact">
@@ -84,7 +54,7 @@
                             <span><strong>Tel:</strong>+01-788-873338</span>
                             <span><strong>Email:</strong>vanilaacademy.com</span>
                             <span><strong>Location:</strong>Mohammadpur,Dhaka-1207</span>
-                        </div>                              
+                        </div>
                     </div>
                 </div>
             </div>
