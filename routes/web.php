@@ -17,3 +17,6 @@ Route::get('/logout', 'LogoutController@index')->name('logout');
 
 //admin
 Route::get('/admin/home', 'AdminController\AdminHomeController@index')->name('admin.home');
+
+//
+Route::get('/student/home', 'StudentController\StudentHomeController@index')->name('student.home');

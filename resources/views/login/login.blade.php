@@ -6,7 +6,7 @@
         <div class="logo">
             <h2>Vanila</h2>
         </div>
-
+        
         <ul>
             <li>
                 <a href="{{route('landingpage')}}"> Home </a>

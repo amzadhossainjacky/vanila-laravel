@@ -67,15 +67,15 @@ class LoginController extends Controller
                 return redirect()->route('admin.home');
             }
 
-            if($find->utype == "student" && $find->ustatus == 1){
+            elseif($find->utype == "student" && $find->ustatus == 1){
                 $request->session()->put('uname', $find->uname);
                 $request->session()->put('uemail', $find->uemail);
                 $request->session()->put('uid', $find->id);
 
-              //  return redirect()->route('studentHome');
+                 return redirect()->route('student.home');
             }
 
-            if($find->utype == "teacher" && $find->ustatus == 1){
+            elseif($find->utype == "teacher" && $find->ustatus == 1){
                 $request->session()->put('uname', $find->uname);
                 $request->session()->put('uemail', $find->uemail);
                 $request->session()->put('uid', $find->id);
