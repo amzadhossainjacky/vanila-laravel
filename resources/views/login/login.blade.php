@@ -6,7 +6,7 @@
         <div class="logo">
             <h2>Vanila</h2>
         </div>
-        
+
         <ul>
             <li>
                 <a href="{{route('landingpage')}}"> Home </a>
@@ -27,7 +27,7 @@
                 <a href="{{route('login')}}" class="active"> Sign In </a>
             </li>
             <li>
-                <a href="register.html" class="n-btn"> Register </a>
+                <a href="{{route('student.reg')}}" class="n-btn"> Register </a>
             </li>
         </ul>
     </nav>

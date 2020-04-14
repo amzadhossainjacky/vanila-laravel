@@ -19,6 +19,7 @@ class CreateLoginsTable extends Migration
             $table->string('uemail');
             $table->string('upassword');
             $table->string('utype');
+            $table->bigInteger('regid');
             $table->integer('ustatus')->default(0);
             $table->timestamps();
         });

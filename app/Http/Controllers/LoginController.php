@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\Login;
 use Validator;
-
 class LoginController extends Controller
 {
     /**
@@ -67,7 +66,7 @@ class LoginController extends Controller
                 return redirect()->route('admin.home');
             }
 
-            elseif($find->utype == "student" && $find->ustatus == 1){
+            if($find->utype == "student" && $find->ustatus == 1){
                 $request->session()->put('uname', $find->uname);
                 $request->session()->put('uemail', $find->uemail);
                 $request->session()->put('uid', $find->id);
@@ -75,12 +74,12 @@ class LoginController extends Controller
                  return redirect()->route('student.home');
             }
 
-            elseif($find->utype == "teacher" && $find->ustatus == 1){
+            if($find->utype == "teacher" && $find->ustatus == 1){
                 $request->session()->put('uname', $find->uname);
                 $request->session()->put('uemail', $find->uemail);
                 $request->session()->put('uid', $find->id);
 
-             //   return redirect()->route('teacherHome');
+                return redirect()->route('teacher.home');
             }
 
             else{

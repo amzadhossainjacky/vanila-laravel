@@ -28,7 +28,7 @@
                 <a href="{{route('login')}}"> Sign In </a>
             </li>
             <li>
-                <a href="register.html" class="n-btn"> Register </a>
+                <a href="{{route('student.reg')}}" class="n-btn"> Register </a>
             </li>
         </ul>
     </nav>

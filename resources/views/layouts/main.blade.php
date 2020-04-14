@@ -11,12 +11,12 @@
 </head>
 
 <body>
-   
+
     {{-- yield show --}}
     @yield('banner')
     @yield('about')
     @yield('login')
-
+    @yield('studentReg')
     <footer>
         <div class="top-footer">
             <div class="container">
