@@ -41,7 +41,7 @@
                 <div class="col-lg-8 text-right">
                     <a href="{{route('teacher.reg')}}" class="btn btn-primary">Teacher Registration</a>
                 </div>
-                
+
                 <div class="col-lg-8 my-2">
                     <h2 class="mb-2">Student Registration</h2>
                     @foreach($errors->all() as $err)
@@ -68,7 +68,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter Email Address"
+                        <input type="text" class="form-control" id="email" placeholder="Enter Email Address"
                         name="email" value="{{old('email')}}">
                     </div>
 
@@ -92,7 +92,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Parent Email</label>
-                        <input type="pemail" class="form-control" id="email" placeholder="Enter Email Address"
+                        <input type="text" class="form-control" id="email" placeholder="Enter Email Address"
                         name="pemail" value="{{old('pemail')}}">
                     </div>
 

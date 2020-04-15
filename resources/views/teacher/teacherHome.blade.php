@@ -16,12 +16,6 @@
                     <i class="fas fa-users"></i> <a href="view_course.html">View Course</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="approve_student.html">Approve Student</a>
-                </li>
-                <li>
-
-                </li>
-                <li>
                     <i class="fas fa-users"></i> <a href="student_info.html">Student Info</a>
                 </li>
                 <li>

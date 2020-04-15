@@ -16,7 +16,6 @@ class StudentHomeController extends Controller
      */
     public function index(Request $req)
     {
-        //
         //dashboard return
         $id = $req->session()->get('uid');
         $data = Login::Where('id', $id )->first();

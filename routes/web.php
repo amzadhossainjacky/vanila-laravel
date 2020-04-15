@@ -6,23 +6,22 @@ Route::get('/', function () {
 })->name('landingpage');
 
 
-//login route
 
+//login route
 Route::get('/login', 'LoginController@index')->name('login');
 Route::post('/login', 'LoginController@store')->name('login');
 
-//registration
+//logout route
+Route::get('/logout', 'LogoutController@index')->name('logout');
+
+//student registration
 Route::get('/student/registration', 'StudentController\StudentRegController@index')->name('student.reg');
 Route::post('/student/registration', 'StudentController\StudentRegController@store')->name('student.reg');
+
 //teacher registration
 Route::get('/teacher/registration', 'TeacherController\TeacherRegController@index')->name('teacher.reg');
-
 Route::post('/teacher/registration', 'TeacherController\TeacherRegController@store')->name('teacher.reg');
 
-
-//logout route
-
-Route::get('/logout', 'LogoutController@index')->name('logout');
 
 //admin
 Route::get('/admin/home', 'AdminController\AdminHomeController@index')->name('admin.home');

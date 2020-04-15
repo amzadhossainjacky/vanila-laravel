@@ -34,6 +34,7 @@
     </section>
 
     @yield('teacherHome')
+    @yield('createCourse..')
 
     <script src="{{asset('public/assets/js/jquery.js')}}"></script>
     <script src="{{asset('public/assets/js/proper.js')}}"></script>
