@@ -60,7 +60,7 @@
                     <div class="col-lg-8 my-5 p-5" style="border: 3px solid #f58776;">
                         <h3>Name: <span>{{$data->uname}}</span></h3>
                         <h3>Email: {{$data->uemail}}</h3>
-                        <a href="admin_profile_edit.html" class="btn btn-warning mt-3">Edit</a>
+                        <a href="{{route('admin.profileEdit',['id'=>session('regid')])}}" class="btn btn-warning mt-3">Edit</a>
                     </div>
                 <div>
             </div>

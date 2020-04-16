@@ -15,7 +15,6 @@ class LoginController extends Controller
     public function index()
     {
         //view login page
-
         return view('Login.login');
     }
 
@@ -62,6 +61,7 @@ class LoginController extends Controller
                 $request->session()->put('uname', $find->uname);
                 $request->session()->put('uemail', $find->uemail);
                 $request->session()->put('uid', $find->id);
+                $request->session()->put('regid', $find->regid);
 
                 return redirect()->route('admin.home');
             }
@@ -70,6 +70,7 @@ class LoginController extends Controller
                 $request->session()->put('uname', $find->uname);
                 $request->session()->put('uemail', $find->uemail);
                 $request->session()->put('uid', $find->id);
+                $request->session()->put('regid', $find->regid);
 
                  return redirect()->route('student.home');
             }
@@ -78,6 +79,7 @@ class LoginController extends Controller
                 $request->session()->put('uname', $find->uname);
                 $request->session()->put('uemail', $find->uemail);
                 $request->session()->put('uid', $find->id);
+                $request->session()->put('regid', $find->regid);
 
                 return redirect()->route('teacher.home');
             }

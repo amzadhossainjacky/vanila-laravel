@@ -25,6 +25,19 @@ Route::post('/teacher/registration', 'TeacherController\TeacherRegController@sto
 
 //admin
 Route::get('/admin/home', 'AdminController\AdminHomeController@index')->name('admin.home');
+Route::get('/admin/profile/edit/{id}', 'AdminController\AdminHomeController@edit')->name('admin.profileEdit');
+Route::get('/admin/profile/update/{id}', 'AdminController\AdminHomeController@update')->name('admin.profileUpdate');
+
+
+
+
+
+
+
+
+
+
+
 
 
 
