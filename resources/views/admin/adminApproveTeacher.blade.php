@@ -1,9 +1,11 @@
 
 @extends('layouts.admin')
 
-@section('adminViewCourse')
+
+@section('adminApproveteacher')
 <section>
-    <div id="wrapper">
+    <div id
+="wrapper">
         <!-- Sidebar -->
         <div class="sidebar">
             <ul>
@@ -14,13 +16,13 @@
                     <i class="fas fa-users"></i> <a href="create_course.html">Create Course</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a  class="ad-active" href="view_course.html">View Course</a>
+                    <i class="fas fa-users"></i> <a href="view_course.html">View Course</a>
                 </li>
                 <li>
                     <i class="fas fa-users"></i> <a href="approve_student.html">Approve Student</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="approve_teacher.html">Approve Teacher</a>
+                    <i class="fas fa-users"></i> <a class="ad-active" href="approve_teacher.html">Approve Teacher</a>
                 </li>
                 <li>
                     <i class="fas fa-users"></i> <a href="student_info.html">Student Info</a>
@@ -34,9 +36,6 @@
                 <li>
                     <i class="fas fa-users"></i> <a href="notice_upload.html">Notice Upload</a>
                 </li>
-                <li>
-                    <i class="fas fa-users"></i> <a href="marks_entry.html">Create Marks</a>
-                </li>
 
 
                 <li>
@@ -45,6 +44,9 @@
 
                 <li>
                     <i class="fas fa-hands-helping"></i> <a href="view_salary.html">View Salary</a>
+                </li>
+                <li>
+                    <i class="fas fa-users"></i> <a href="marks_entry.html">Create Marks</a>
                 </li>
                 <li>
                     <i class="fas fa-hands-helping"></i> <a href="alert_parent.html">Alert Parents</a>
@@ -56,36 +58,30 @@
             <div class="container-fluid">
                 <div class="row justify-content-center text-center">
                     <div class="col-lg-8 mb-4 mr-auto">
-                        <h1> Course Details</h1>
+                        <h1> Approval Teacher</h1>
                     </div>
                     <div class="col-lg-10">
                         <table class="table table-hover table-primary">
                             <thead class="table-danger">
                             <tr>
-                                <th>COURSE ID</th>
-                                <th>COURSE TYPE</th>
-                                <th>BATCH</th>
-                                <th>DAY</th>
-                                <th>Time</th>
-                                <th>FEES</th>
+                                <th>STUDENT ID</th>
+                                <th>STUDENT NAME</th>
+                                <th>Status</th>
                                 <th>ACTION</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                                @foreach ($data as $course)
-                                <tr>
-                                    <th>{{$course->id}}</th>
-                                    <th>{{$course->courseType}}</th>
-                                    <th>{{$course->batch}}</th>
-                                    <th>{{$course->classDay}}</th>
-                                    <th>{{date('h:i:s a ', strtotime($course->classTime))}}</th>
-                                    <th>{{$course->fees}}</th>
-                                    <th>
-                                        <a href="{{route('admin.editCourse',$course->id)}}" class="btn btn-warning">Edit</a>
-                                        <a href="{{route('admin.destroyCourse', $course->id)}}" class="btn btn-danger">Delete</a>
-                                    </th>
-                                </tr>
+                                @foreach ($data as $user)
+                                    <tr>
+                                        <th>{{$user->id}}</th>
+                                        <th>{{$user->uname}}</th>
+                                        <th>{{$user->ustatus}}</th>
+                                        <th>
+                                            <a href="{{route('admin.confirmApproveTeacher',$user->id)}}" class="btn btn-warning">Yes</a>
+                                            <a href="{{route('admin.denyTeacher',$user->id)}}" class="btn btn-info">No</a>
+                                        </th>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -95,5 +91,4 @@
         </div>
     </div>
 </section>
-
 @endsection

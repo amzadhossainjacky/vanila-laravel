@@ -40,6 +40,9 @@
     @yield('adminProfileEdit')
     @yield('adminCreateCourse')
     @yield('adminViewCourse')
+    @yield('adminEditCourse')
+    @yield('adminApproveStudent')
+    @yield('adminApproveteacher')
 
 </body>
 

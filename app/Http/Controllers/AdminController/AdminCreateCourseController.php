@@ -92,6 +92,9 @@ class AdminCreateCourseController extends Controller
     public function edit($id)
     {
         //
+
+        $data = Course::find($id);
+        return view('admin.adminEditCourse', compact('data'));
     }
 
     /**
@@ -104,6 +107,30 @@ class AdminCreateCourseController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validation = Validator::make($request->all(), [
+
+			'courseType'=>'required',
+			'batchType'=>'required',
+			'day'=>'required',
+			'time'=>'required',
+			'fees'=>'required | integer',
+        ]);
+
+        if($validation->fails()){
+
+            return response()->json(['errors'=>$validation->errors()->all()]);
+        }
+
+        $data = Course::find($id);
+
+        $data->courseType = $request->courseType;
+        $data->batch = $request->batchType;
+        $data->classDay = $request->day;
+        $data->classTime = $request->time;
+        $data->fees= $request->fees;
+        $data->save();
+
+        return response()->json(['success'=>'Record is successfully added']);
     }
 
     /**
@@ -117,7 +144,7 @@ class AdminCreateCourseController extends Controller
         //
 
         $delete = Course::destroy($id);
-        
+
         return redirect()->back();
     }
 }

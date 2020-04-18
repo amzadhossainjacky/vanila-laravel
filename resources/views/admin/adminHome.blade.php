@@ -17,10 +17,10 @@
                     <i class="fas fa-users"></i> <a href="{{route('admin.viewCourse')}}">View Course</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="approve_student.html">Approve Student</a>
+                    <i class="fas fa-users"></i> <a href="{{route('admin.approveStudent')}}">Approve Student</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="approve_teacher.html">Approve Teacher</a>
+                    <i class="fas fa-users"></i> <a href="{{route('admin.approveTeacher')}}">Approve Teacher</a>
                 </li>
                 <li>
                     <i class="fas fa-users"></i> <a href="student_info.html">Student Info</a>

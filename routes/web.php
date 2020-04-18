@@ -24,17 +24,29 @@ Route::post('/teacher/registration', 'TeacherController\TeacherRegController@sto
 
 
 //admin
+
+//admin profile
 Route::get('/admin/home', 'AdminController\AdminHomeController@index')->name('admin.home');
 Route::get('/admin/profile/edit/{id}', 'AdminController\AdminHomeController@edit')->name('admin.profileEdit');
 Route::get('/admin/profile/update/{id}', 'AdminController\AdminHomeController@update')->name('admin.profileUpdate');
+
+//admin create course
 Route::get('/admin/createCourse', 'AdminController\AdminCreateCourseController@index')->name('admin.createCourse');
 Route::post('/admin/createCourse', 'AdminController\AdminCreateCourseController@store')->name('admin.createCourse');
 Route::get('/admin/viewCourse', 'AdminController\AdminCreateCourseController@create')->name('admin.viewCourse');
 Route::get('/admin/destroyCourse/{id}', 'AdminController\AdminCreateCourseController@destroy')->name('admin.destroyCourse');
+Route::get('/admin/editCourse/{id}', 'AdminController\AdminCreateCourseController@edit')->name('admin.editCourse');
+Route::post('/admin/updateCourse/{id}', 'AdminController\AdminCreateCourseController@update')->name('admin.updateCourse');
+
+//admin approve user
+Route::get('/admin/approve/student', 'AdminController\AdminApproveUserController@index')->name('admin.approveStudent');
+Route::get('/admin/approve/student/{id}', 'AdminController\AdminApproveUserController@approveStudent')->name('admin.confirmApproveStudent');
+Route::get('/admin/deny/student/{id}', 'AdminController\AdminApproveUserController@denyStudent')->name('admin.denyStudent');
 
 
-
-
+Route::get('/admin/approve/teacher', 'AdminController\AdminApproveUserController@create')->name('admin.approveTeacher');
+Route::get('/admin/approve/teacher/{id}', 'AdminController\AdminApproveUserController@approveTeacher')->name('admin.confirmApproveTeacher');
+Route::get('/admin/deny/teacher/{id}', 'AdminController\AdminApproveUserController@denyTeacher')->name('admin.denyTeacher');
 
 
 
