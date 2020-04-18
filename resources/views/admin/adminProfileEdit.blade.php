@@ -61,8 +61,7 @@
                         <span style="background-color: #0043ff5e; padding:6px; font-size: 18px;  font-weight: 700; display:block;"
                         >{{$err}} </span>
                         @endforeach
-                        <span style="font-size: 18px;  font-weight: 700; display:block;"
-                        >{{session('msg')}} </span>
+
 
                         <form action="{{route('admin.profileUpdate',['id'=>$data->id])}}" class="mt-5">
                             {{csrf_field()}}

@@ -36,9 +36,10 @@
     <script src="{{asset('public/assets/js/jquery.js')}}"></script>
     <script src="{{asset('public/assets/js/proper.js')}}"></script>
     <script src="{{asset('public/assets/js/bootstrap.js')}}"></script>
-    
     @yield('adminHome')
     @yield('adminProfileEdit')
+    @yield('adminCreateCourse')
+    @yield('adminViewCourse')
 
 </body>
 

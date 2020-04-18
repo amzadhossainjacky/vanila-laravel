@@ -19,6 +19,7 @@ class CreateCoursesTable extends Migration
             $table->string('batch');
             $table->time('classTime');
             $table->string('classDay');
+            $table->integer('fees');
             $table->integer('status');
             $table->bigInteger('uid')->unsigned();
             $table->foreign('uid')->references('id')->on('registrations')

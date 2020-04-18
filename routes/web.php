@@ -27,6 +27,15 @@ Route::post('/teacher/registration', 'TeacherController\TeacherRegController@sto
 Route::get('/admin/home', 'AdminController\AdminHomeController@index')->name('admin.home');
 Route::get('/admin/profile/edit/{id}', 'AdminController\AdminHomeController@edit')->name('admin.profileEdit');
 Route::get('/admin/profile/update/{id}', 'AdminController\AdminHomeController@update')->name('admin.profileUpdate');
+Route::get('/admin/createCourse', 'AdminController\AdminCreateCourseController@index')->name('admin.createCourse');
+Route::post('/admin/createCourse', 'AdminController\AdminCreateCourseController@store')->name('admin.createCourse');
+Route::get('/admin/viewCourse', 'AdminController\AdminCreateCourseController@create')->name('admin.viewCourse');
+Route::get('/admin/destroyCourse/{id}', 'AdminController\AdminCreateCourseController@destroy')->name('admin.destroyCourse');
+
+
+
+
+
 
 
 

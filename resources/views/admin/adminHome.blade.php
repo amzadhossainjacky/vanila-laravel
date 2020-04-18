@@ -11,10 +11,10 @@
                     <i class="fas fa-users"></i> <a class="ad-active" href="{{route('admin.home')}}">Profile</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="create_course.html">Create Course</a>
+                    <i class="fas fa-users"></i> <a href="{{route('admin.createCourse')}}">Create Course</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="view_course.html">View Course</a>
+                    <i class="fas fa-users"></i> <a href="{{route('admin.viewCourse')}}">View Course</a>
                 </li>
                 <li>
                     <i class="fas fa-users"></i> <a href="approve_student.html">Approve Student</a>
