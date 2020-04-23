@@ -23,7 +23,7 @@
                     <i class="fas fa-users"></i> <a href="{{route('admin.approveTeacher')}}">Approve Teacher</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="student_info.html">Student Info</a>
+                    <i class="fas fa-users"></i> <a href="{{route('admin.viewStudent')}}">Student Info</a>
                 </li>
                 <li>
                     <i class="fas fa-users"></i> <a href="teacher_info.html">Teacher Info</a>

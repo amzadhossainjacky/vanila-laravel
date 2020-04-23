@@ -23,6 +23,12 @@ Route::get('/teacher/registration', 'TeacherController\TeacherRegController@inde
 Route::post('/teacher/registration', 'TeacherController\TeacherRegController@store')->name('teacher.reg');
 
 
+
+
+//middleware
+Route::group(['middleware' => ['vanilaMiddleware']], function(){
+
+
 //admin
 
 //admin profile
@@ -49,15 +55,15 @@ Route::get('/admin/approve/teacher/{id}', 'AdminController\AdminApproveUserContr
 Route::get('/admin/deny/teacher/{id}', 'AdminController\AdminApproveUserController@denyTeacher')->name('admin.denyTeacher');
 
 
+//view student info
 
+Route::get('/admin/viewStudent', 'AdminController\AdminViewStudentController@index')->name('admin.viewStudent');
+/* Route::post('/admin/viewStudent', 'AdminController\AdminViewStudentController@search')->name('admin.viewStudent'); */
 
+Route::get('/admin/viewAllStudent', 'AdminController\AdminViewStudentController@getData')->name('admin.viewAllStudent');
 
-
-
-
-
-
-
+Route::post('/admin/viewStudent/{id}', 'AdminController\AdminViewStudentController@destroy')->name('admin.deleteStudent');
+});
 
 
 

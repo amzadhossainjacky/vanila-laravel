@@ -2,6 +2,8 @@
     "cSpell.words": [
         "choosecourses",
         "cmsvanila",
+        "datatables",
+        "middleware",
         "pemail",
         "pphone",
         "regid",
@@ -10,6 +12,7 @@
         "teacherregs",
         "upassword",
         "ustatus",
-        "utype"
+        "utype",
+        "vanila"
     ]
 }

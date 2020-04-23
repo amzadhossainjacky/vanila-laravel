@@ -7,6 +7,8 @@
     <title>Coaching Management System</title>
     <link rel="stylesheet" href="{{asset('public/assets/fontawesome/css/all.css')}}" />
     <link rel="stylesheet" href="{{asset('public/assets/css/bootstrap.css')}}" />
+    <link rel="stylesheet" href="{{asset('public/assets/css/datatable.min.css')}}" />
+    {{-- <link rel="stylesheet" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css"> --}}
     <link rel="stylesheet" href="{{asset('public/assets/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('public/assets/css/responsive.css')}}" />
 </head>
@@ -36,6 +38,8 @@
     <script src="{{asset('public/assets/js/jquery.js')}}"></script>
     <script src="{{asset('public/assets/js/proper.js')}}"></script>
     <script src="{{asset('public/assets/js/bootstrap.js')}}"></script>
+    {{-- <script src="{{asset('public/assets/js/datatable.min.js')}}"></script> --}}
+    <script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     @yield('adminHome')
     @yield('adminProfileEdit')
     @yield('adminCreateCourse')
@@ -43,6 +47,9 @@
     @yield('adminEditCourse')
     @yield('adminApproveStudent')
     @yield('adminApproveteacher')
+    @yield('adminViewStudent')
+
+
 
 </body>
 
