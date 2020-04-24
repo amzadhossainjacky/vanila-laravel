@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
-@section('adminCreateCourse')
+@section('adminNoticeUpload')
+
 <section>
     <div id="wrapper">
         <!-- Sidebar -->
@@ -10,7 +11,7 @@
                     <i class="fas fa-users"></i> <a href="admin_dashboard.html">Profile</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a class="ad-active" href="create_course.html">Create Course</a>
+                    <i class="fas fa-users"></i> <a href="create_course.html">Create Course</a>
                 </li>
                 <li>
                     <i class="fas fa-users"></i> <a href="view_course.html">View Course</a>
@@ -31,7 +32,7 @@
                     <i class="fas fa-users"></i> <a href="notes_upload.html">Notes Upload</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="notice_upload.html">Notice Upload</a>
+                    <i class="fas fa-users"></i> <a class="ad-active" href="notice_upload.html">Notice Upload</a>
                 </li>
                 <li>
                     <i class="fas fa-users"></i> <a href="marks_entry.html">Create Marks</a>
@@ -53,58 +54,34 @@
 
         <div id="content-wrapper">
             <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h1>Create Course</h1>
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8 mb-4 mr-auto">
+                        <h1>Notice Upload</h1>
+                    </div>
+                    <div class="col-lg-5">
 
                         {{-- errors shows --}}
                         <div class="alert-danger"></div>
 
                         <form class="form" id="sub">
                             <div class="form-group">
-                            <h5 class="mt-3">Course Type</h5>
-                            <select class="form-control" name="courseType" id="courseType">
-                                <option> Model Test </option>
-                                <option> Revision </option>
-                                <option> Regular </option>
-                            </select>
+                                <label for="topic" class="font-weight-bold">Topic</label>
+                                <input type="text" class="form-control" id="topic" placeholder="enter topic" name="topic">
                             </div>
 
                             <div class="form-group">
-                            <h5>Batch</h5>
-                            <select class="form-control" name="batchType" id="batchType">
-                                <option> SSC </option>
-                                <option> HSC </option>
-                            </select>
+                                <label for="exampleFormControlTextarea1" class="font-weight-bold">Details</label>
+                                <textarea class="form-control" id="details" rows="6" placeholder="write something" name="details"></textarea>
                             </div>
-
-                            <div class="form-group">
-                            <h5>Class Day</h5>
-                            <select class="form-control" name="day" id="day">
-                                <option> Sunday & Tuesday </option>
-                                <option> Monday & Wednesday </option>
-                                <option> thursday & Saturday </option>
-                            </select>
-                            </div>
-
-                            <div class="form-group">
-                               <h5> Time </h5>
-                                <input type="time" class="form-control" id="time"
-                                name="time">
-                            </div>
-
-                            <div class="form-group">
-                                <h5> Fees</h5>
-                                <input type="text" class="form-control" id="fees" name="fees" placeholder="enter fees">
-                            </div>
-                            <button type="submit" class="btn btn-info" >Create</button>
-                     </form>
+                            <button type="submit" class="btn btn-primary" >Upload</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <script type="text/javascript">
 
@@ -118,7 +95,7 @@
         $('#sub').submit(function(e){
           e.preventDefault();
           var data = $(this).serialize();
-          var url = "{{route('admin.createCourse')}}"
+          var url = "{{route('admin.noticeUpload')}}"
          $.ajax({
              url: url,
              method: 'POST',
@@ -133,8 +110,8 @@
                  }
                  else{
                     $(".alert-danger p").remove();
-                    $('#time').val('');
-                    $('#fees').val('');
+                    $('#topic').val('');
+                    $('#details').val('');
                     alert(data.success);
                  }
             }

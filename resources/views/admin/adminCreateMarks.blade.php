@@ -1,6 +1,7 @@
+
 @extends('layouts.admin')
 
-@section('adminCreateCourse')
+@section('adminMarksCreate')
 <section>
     <div id="wrapper">
         <!-- Sidebar -->
@@ -10,7 +11,7 @@
                     <i class="fas fa-users"></i> <a href="admin_dashboard.html">Profile</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a class="ad-active" href="create_course.html">Create Course</a>
+                    <i class="fas fa-users"></i> <a href="create_course.html">Create Course</a>
                 </li>
                 <li>
                     <i class="fas fa-users"></i> <a href="view_course.html">View Course</a>
@@ -34,7 +35,7 @@
                     <i class="fas fa-users"></i> <a href="notice_upload.html">Notice Upload</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="marks_entry.html">Create Marks</a>
+                    <i class="fas fa-users"></i> <a class="ad-active"  href="marks_entry.html">Create Marks</a>
                 </li>
 
 
@@ -53,58 +54,66 @@
 
         <div id="content-wrapper">
             <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h1>Create Course</h1>
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8 mb-4 mr-auto">
+                        <h1>Student Marks Entry</h1>
+                    </div>
+                    <div class="col-lg-5">
 
                         {{-- errors shows --}}
                         <div class="alert-danger"></div>
 
                         <form class="form" id="sub">
+
                             <div class="form-group">
-                            <h5 class="mt-3">Course Type</h5>
-                            <select class="form-control" name="courseType" id="courseType">
-                                <option> Model Test </option>
-                                <option> Revision </option>
-                                <option> Regular </option>
+                            <h5>Exam Type</h5>
+                            <select class="form-control" name="examType" id="examType">
+                                <option> Quiz </option>
+                                <option> Written </option>
+                                <option> Objective </option>
+                            </select>
+                            </div>
+
+
+                            <div class="form-group">
+                            <h5>Exam Name</h5>
+                            <select class="form-control" name="examName" id="examName">
+                                <option> Quiz 1 </option>
+                                <option> Quiz 2 </option>
+                                <option> Quiz 3 </option>
+                                <option> Written </option>
+                                <option> Objective</option>
                             </select>
                             </div>
 
                             <div class="form-group">
-                            <h5>Batch</h5>
-                            <select class="form-control" name="batchType" id="batchType">
-                                <option> SSC </option>
-                                <option> HSC </option>
-                            </select>
+                                <h5> Course Id</h5>
+                                <select class="form-control" name="courseId" id="courseId">
+                                    @foreach ($data as $value)
+                                        <option> {{$value->id}} </option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="form-group">
-                            <h5>Class Day</h5>
-                            <select class="form-control" name="day" id="day">
-                                <option> Sunday & Tuesday </option>
-                                <option> Monday & Wednesday </option>
-                                <option> thursday & Saturday </option>
-                            </select>
+                                <h5> UserId </h5>
+                                <input class="form-control" id="userId" name="userId" placeholder="enter userId">
                             </div>
 
                             <div class="form-group">
-                               <h5> Time </h5>
-                                <input type="time" class="form-control" id="time"
-                                name="time">
+                                <h5> Marks</h5>
+                                <input class="form-control" id="marks" name="marks" placeholder="enter marks">
                             </div>
-
-                            <div class="form-group">
-                                <h5> Fees</h5>
-                                <input type="text" class="form-control" id="fees" name="fees" placeholder="enter fees">
-                            </div>
-                            <button type="submit" class="btn btn-info" >Create</button>
-                     </form>
+                            <button type="submit" class="btn btn-primary">upload</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
 
 <script type="text/javascript">
 
@@ -118,7 +127,7 @@
         $('#sub').submit(function(e){
           e.preventDefault();
           var data = $(this).serialize();
-          var url = "{{route('admin.createCourse')}}"
+          var url = "{{route('admin.marksCreate')}}"
          $.ajax({
              url: url,
              method: 'POST',
@@ -133,8 +142,8 @@
                  }
                  else{
                     $(".alert-danger p").remove();
-                    $('#time').val('');
-                    $('#fees').val('');
+                    $('#userId').val('');
+                    $('#marks').val('');
                     alert(data.success);
                  }
             }
@@ -142,5 +151,6 @@
        });
     });
 </script>
+
 
 @endsection

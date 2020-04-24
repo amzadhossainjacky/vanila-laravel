@@ -58,12 +58,44 @@ Route::get('/admin/deny/teacher/{id}', 'AdminController\AdminApproveUserControll
 //view student info
 
 Route::get('/admin/viewStudent', 'AdminController\AdminViewStudentController@index')->name('admin.viewStudent');
+
 /* Route::post('/admin/viewStudent', 'AdminController\AdminViewStudentController@search')->name('admin.viewStudent'); */
 
 Route::get('/admin/viewAllStudent', 'AdminController\AdminViewStudentController@getData')->name('admin.viewAllStudent');
 
 Route::post('/admin/viewStudent/{id}', 'AdminController\AdminViewStudentController@destroy')->name('admin.deleteStudent');
+
+//view teacher info
+Route::get('/admin/viewTeacher', 'AdminController\AdminViewTeacherController@index')->name('admin.viewTeacher');
+Route::get('/admin/viewAllTeacher', 'AdminController\AdminViewTeacherController@getData')->name('admin.viewAllTeacher');
+Route::post('/admin/viewTeacher/{id}', 'AdminController\AdminViewTeacherController@destroy')->name('admin.deleteTeacher');
+
+//Notice upload
+
+Route::get('/admin/noticeUpload', 'AdminController\AdminNoticeController@index')->name('admin.noticeUpload');
+
+Route::post('/admin/noticeUpload', 'AdminController\AdminNoticeController@store')->name('admin.noticeUpload');
+
 });
+
+//Marks upload
+
+Route::get('/admin/marksUpload', 'AdminController\AdminCreateMarksController@index')->name('admin.marksCreate');
+
+Route::post('/admin/marksUpload', 'AdminController\AdminCreateMarksController@store')->name('admin.marksCreate');
+
+//Entry Salary
+
+Route::get('/admin/EntrySalary', 'AdminController\AdminEntrySalaryController@index')->name('admin.entrySalary');
+Route::post('/admin/EntrySalary', 'AdminController\AdminEntrySalaryController@store')->name('admin.entrySalary');
+
+
+
+
+
+
+
+
 
 
 

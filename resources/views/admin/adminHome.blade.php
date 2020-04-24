@@ -26,20 +26,20 @@
                     <i class="fas fa-users"></i> <a href="{{route('admin.viewStudent')}}">Student Info</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="teacher_info.html">Teacher Info</a>
+                    <i class="fas fa-users"></i> <a href="{{route('admin.viewTeacher')}}">Teacher Info</a>
                 </li>
                 <li>
                     <i class="fas fa-users"></i> <a href="notes_upload.html">Notes Upload</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="notice_upload.html">Notice Upload</a>
+                    <i class="fas fa-users"></i> <a href="{{route('admin.noticeUpload')}}">Notice Upload</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="marks_entry.html">Create Marks</a>
+                    <i class="fas fa-users"></i> <a href="{{route('admin.marksCreate')}}">Create Marks</a>
                 </li>
 
                 <li>
-                    <i class="fas fa-hands-helping"></i> <a href="entry_salary.html">Entry Salary</a>
+                    <i class="fas fa-hands-helping"></i> <a href="{{route('admin.entrySalary')}}">Entry Salary</a>
                 </li>
 
                 <li>

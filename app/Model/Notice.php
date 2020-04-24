@@ -7,4 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Notice extends Model
 {
     //
+    protected $fillable =[
+        'topic', 'details', 'uid'
+    ];
 }

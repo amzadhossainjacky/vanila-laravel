@@ -48,7 +48,10 @@
     @yield('adminApproveStudent')
     @yield('adminApproveteacher')
     @yield('adminViewStudent')
-
+    @yield('adminViewTeacher')
+    @yield('adminNoticeUpload')
+    @yield('adminMarksCreate')
+    @yield('adminEntrySalary')
 
 
 </body>

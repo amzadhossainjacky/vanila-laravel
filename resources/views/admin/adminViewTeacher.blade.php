@@ -1,7 +1,7 @@
 
 @extends('layouts.admin')
 
-@section('adminViewStudent')
+@section('adminViewTeacher')
 <section>
     <div id="wrapper">
         <!-- Sidebar -->
@@ -23,10 +23,10 @@
                     <i class="fas fa-users"></i> <a href="approve_teacher.html">Approve Teacher</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a class="ad-active"  href="student_info.html">Student Info</a>
+                    <i class="fas fa-users"></i> <a href="student_info.html">Student Info</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="teacher_info.html">Teacher Info</a>
+                    <i class="fas fa-users"></i> <a class="ad-active" href="teacher_info.html">Teacher Info</a>
                 </li>
                 <li>
                     <i class="fas fa-users"></i> <a href="notes_upload.html">Notes Upload</a>
@@ -56,22 +56,15 @@
             <div class="container-fluid">
                 <div class="row justify-content-center text-center">
                     <div class="col-lg-8 mb-4 mr-auto">
-                        <h1>Student Info</h1>
+                        <h1>Teacher Info</h1>
                     </div>
-                    {{-- <div class="col-lg-10 mb-4">
-                        <nav class="navbar navbar-light bg-light">
-                            <form class="form-inline ml-auto">
-                              <input type="search"  class="form-control mr-sm-2" type="search" placeholder="Search" id="search">
-                            </form>
-                          </nav>
-                    </div> --}}
 
                     <div class="col-lg-10 ajaxdata">
                         <table class="table table-hover table-primary" id="myTable" >
                             <thead class="table-danger">
                             <tr>
-                                <th>STUDENT ID</th>
-                                <th>STUDENT NAME</th>
+                                <th>TEACHER ID</th>
+                                <th>TEACHER NAME</th>
                                 <th>EMAIL</th>
                                 <th>PHONE</th>
                                 <th>USER TYPE</th>
@@ -89,50 +82,6 @@
 
 <script type="text/javascript">
 
-    /* function search(){
-        var search = $('#search').val();
-        console.log(search);
-    } */
-
-   /*  $(document).ready(function () {
-        $.ajaxSetup({
-             headers: {
-             'X-CSRF-TOKEN': '{{csrf_token()}}'
-             }
-             });
-
-        $('#search').keyup(function (e) {
-            e.preventDefault();
-            var search = $('#search').val();
-            console.log(search);
-
-             if(search){
-
-                $('.ajaxdata').show();
-                 $('.general-data').hide();
-
-             }else{
-
-                $('.ajaxdata').hide();
-                 $('.general-data').show();
-             }
-
-            $.ajax({
-            type: "post",
-            url: "{{route('admin.viewStudent')}}",
-            data: {
-                search: search
-            },
-            dataType:'html',
-            success: function (response) {
-                console.log(response);
-               $('#success').html(response);
-            }
-            });
-         });
-    });
-
- */
 
  $(document).ready( function () {
 
@@ -141,12 +90,13 @@
         'X-CSRF-TOKEN': '{{csrf_token()}}'
             }
         });
-});
+    });
+
         var table1= $('#myTable').DataTable({
 
         processing: true,
         serverSide: true,
-        ajax: "{!! route('admin.viewAllStudent') !!}",
+        ajax: "{!! route('admin.viewAllTeacher') !!}",
         columns: [
             { data: 'id', name: 'id' },
             { data: 'name', name: 'name' },
@@ -166,7 +116,7 @@
 
         $.ajax({
             type: "post",
-            url:"{{URL::to('/admin/viewStudent')}}"+'/'+id,
+            url:"{{URL::to('/admin/viewTeacher')}}"+'/'+id,
             success: function (data) {
                 table1.ajax.reload();
                 alert(data.success);
@@ -177,3 +127,4 @@
 </script>
 
 @endsection
+
