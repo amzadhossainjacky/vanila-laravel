@@ -52,6 +52,8 @@
     @yield('adminNoticeUpload')
     @yield('adminMarksCreate')
     @yield('adminEntrySalary')
+    @yield('adminViewSalary')
+    @yield('adminEditSalary')
 
 
 </body>

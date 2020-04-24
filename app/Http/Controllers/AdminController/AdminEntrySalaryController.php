@@ -38,6 +38,8 @@ class AdminEntrySalaryController extends Controller
     public function create()
     {
         //
+        $data = Salary::all();
+        return view('admin.adminViewSalary', compact('data'));
     }
 
     /**
@@ -93,6 +95,10 @@ class AdminEntrySalaryController extends Controller
     public function edit($id)
     {
         //
+
+        $data = Salary::where('tid', $id)->first();
+        return view('admin.adminEditSalary', compact('data'));
+
     }
 
     /**
@@ -105,6 +111,25 @@ class AdminEntrySalaryController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+
+        $validation = Validator::make($request->all(), [
+            'salaryId'=>'required',
+			'amount'=>'required | integer',
+        ]);
+
+        if($validation->fails()){
+			return back()
+					->with('errors', $validation->errors())
+					->withInput();
+        }
+
+        $data = Salary::find($id);
+        $data->amount =$request->amount;
+        $data->save();
+        
+        return redirect()->route('admin.viewSalary');
+
     }
 
     /**
