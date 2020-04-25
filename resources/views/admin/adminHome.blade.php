@@ -46,7 +46,7 @@
                     <i class="fas fa-hands-helping"></i> <a href="{{route('admin.viewSalary')}}">View Salary</a>
                 </li>
                 <li>
-                    <i class="fas fa-hands-helping"></i> <a href="alert_parent.html">Alert Parents</a>
+                    <i class="fas fa-hands-helping"></i> <a href="{{route('admin.alertParent')}}">Alert Parents</a>
                 </li>
             </ul>
         </div>

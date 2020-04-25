@@ -96,6 +96,14 @@ Route::get('/admin/notesUpload', 'AdminController\AdminNotesController@index')->
 Route::post('/admin/notesUpload', 'AdminController\AdminNotesController@store')->name('admin.notesUpload');
 
 
+//alert Parent
+
+Route::get('/admin/alertParent', 'AdminController\AdminAlertParentController@index')->name('admin.alertParent');
+
+Route::get('/admin/sendMail/{id}', 'AdminController\AdminAlertParentController@show')->name('admin.sendMail');
+Route::post('/admin/sendMail/{id}', 'AdminController\AdminAlertParentController@sendMail')->name('admin.sendMail');
+
+
 
 });
 
@@ -106,4 +114,6 @@ Route::get('/student/home', 'StudentController\StudentHomeController@index')->na
 
 
 //teacher
+
+Route::get('/teacher/home', 'TeacherController\TeacherHomeController@index')->name('teacher.home');
 Route::get('/teacher/home', 'TeacherController\TeacherHomeController@index')->name('teacher.home');
