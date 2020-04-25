@@ -77,16 +77,11 @@ Route::get('/admin/noticeUpload', 'AdminController\AdminNoticeController@index')
 Route::post('/admin/noticeUpload', 'AdminController\AdminNoticeController@store')->name('admin.noticeUpload');
 
 
-
-
 //Marks upload
-
 Route::get('/admin/marksUpload', 'AdminController\AdminCreateMarksController@index')->name('admin.marksCreate');
-
 Route::post('/admin/marksUpload', 'AdminController\AdminCreateMarksController@store')->name('admin.marksCreate');
 
 //Entry Salary
-
 Route::get('/admin/entrySalary', 'AdminController\AdminEntrySalaryController@index')->name('admin.entrySalary');
 Route::post('/admin/entrySalary', 'AdminController\AdminEntrySalaryController@store')->name('admin.entrySalary');
 
@@ -96,12 +91,13 @@ Route::get('/admin/editSalary/{id}', 'AdminController\AdminEntrySalaryController
 
 Route::post('/admin/editSalary/{id}', 'AdminController\AdminEntrySalaryController@update')->name('admin.updateSalary');
 
+//notes upload
+Route::get('/admin/notesUpload', 'AdminController\AdminNotesController@index')->name('admin.notesUpload');
+Route::post('/admin/notesUpload', 'AdminController\AdminNotesController@store')->name('admin.notesUpload');
 
 
 
 });
-
-
 
 
 

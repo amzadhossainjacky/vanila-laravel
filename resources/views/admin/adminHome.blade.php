@@ -29,7 +29,7 @@
                     <i class="fas fa-users"></i> <a href="{{route('admin.viewTeacher')}}">Teacher Info</a>
                 </li>
                 <li>
-                    <i class="fas fa-users"></i> <a href="notes_upload.html">Notes Upload</a>
+                    <i class="fas fa-users"></i> <a href="{{route('admin.notesUpload')}}">Notes Upload</a>
                 </li>
                 <li>
                     <i class="fas fa-users"></i> <a href="{{route('admin.noticeUpload')}}">Notice Upload</a>
