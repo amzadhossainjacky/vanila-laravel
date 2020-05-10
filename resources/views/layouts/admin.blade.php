@@ -57,6 +57,7 @@
     @yield('adminNotesUpload')
     @yield('adminAlertParent')
     @yield('adminSendMail')
+    @yield('adminReport')
 
 
 </body>

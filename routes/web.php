@@ -103,7 +103,10 @@ Route::get('/admin/alertParent', 'AdminController\AdminAlertParentController@ind
 Route::get('/admin/sendMail/{id}', 'AdminController\AdminAlertParentController@show')->name('admin.sendMail');
 Route::post('/admin/sendMail/{id}', 'AdminController\AdminAlertParentController@sendMail')->name('admin.sendMail');
 
+//report
 
+Route::get('/admin/report', 'AdminController\AdminReportController@index')->name('admin.report');
+Route::post('/admin/report', 'AdminController\AdminReportController@create')->name('admin.report');
 
 });
 

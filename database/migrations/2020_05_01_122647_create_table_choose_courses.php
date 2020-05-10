@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateChoosecoursesTable extends Migration
+class CreateTableChooseCourses extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateChoosecoursesTable extends Migration
      */
     public function up()
     {
-        Schema::create('choosecourses', function (Blueprint $table) {
+        Schema::create('choose_courses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('fees');
             $table->integer('paid');
@@ -34,6 +34,6 @@ class CreateChoosecoursesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('choosecourses');
+        Schema::dropIfExists('choose_courses');
     }
 }
