@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2020 at 08:52 AM
+-- Generation Time: May 10, 2020 at 06:56 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `choosecourses`
+-- Table structure for table `choose_courses`
 --
 
-CREATE TABLE `choosecourses` (
+CREATE TABLE `choose_courses` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `fees` int(11) NOT NULL,
   `paid` int(11) NOT NULL,
@@ -37,6 +37,14 @@ CREATE TABLE `choosecourses` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `choose_courses`
+--
+
+INSERT INTO `choose_courses` (`id`, `fees`, `paid`, `cid`, `uid`, `created_at`, `updated_at`) VALUES
+(1, 3000, 2000, 3, 5, '2020-04-30 18:00:00', '2020-04-30 18:00:00'),
+(2, 4000, 1200, 6, 8, '2020-04-30 18:00:00', '2020-04-30 18:00:00');
 
 -- --------------------------------------------------------
 
@@ -62,8 +70,8 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `courseType`, `batch`, `classTime`, `classDay`, `fees`, `status`, `uid`, `created_at`, `updated_at`) VALUES
-(3, 'Model Test', 'SSC', '14:00:00', 'Sunday & Tuesday', 3100, 1, 1, '2020-04-16 17:42:05', '2020-04-20 09:21:56'),
-(6, 'Regular', 'SSC', '14:00:00', 'Sunday & Tuesday', 3900, 1, 1, '2020-04-20 09:22:52', '2020-04-20 09:22:52');
+(3, 'Model Test', 'SSC', '14:00:00', 'Sunday & Tuesday', 3000, 1, 1, '2020-04-16 17:42:05', '2020-05-01 07:35:58'),
+(6, 'Model Test', 'SSC', '14:00:00', 'Sunday & Tuesday', 4000, 1, 1, '2020-04-20 09:22:52', '2020-05-01 07:36:32');
 
 -- --------------------------------------------------------
 
@@ -94,7 +102,8 @@ INSERT INTO `logins` (`id`, `uname`, `uemail`, `upassword`, `utype`, `regid`, `u
 (6, 'Khalid Hasan', 'khalid@gmail.com', '1', 'student', 8, 1, '2020-04-15 11:08:45', '2020-04-18 03:08:49'),
 (13, 'Kamal Hossain', 'kamal@gmail.com', '1', 'student', 15, 0, '2020-04-22 19:24:35', '2020-04-23 08:20:00'),
 (15, 'Jahid Hasan', 'jahid@gmail.com', '1', 'teacher', 17, 1, '2020-04-23 04:46:49', '2020-04-23 04:48:12'),
-(16, 'Salma Rahman', 'salma@gmail.com', '1', 'teacher', 18, 1, '2020-04-23 04:48:01', '2020-04-23 04:48:11');
+(16, 'Salma Rahman', 'salma@gmail.com', '1', 'teacher', 18, 1, '2020-04-23 04:48:01', '2020-04-23 04:48:11'),
+(17, 'Jacky', 'jak@gmail.com', '1', 'student', 19, 0, '2020-04-24 21:41:52', '2020-04-24 21:41:52');
 
 -- --------------------------------------------------------
 
@@ -116,11 +125,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2020_04_12_195443_create_logins_table', 1),
 (2, '2020_04_14_144019_create_registrations_table', 1),
 (10, '2020_04_15_200529_create_courses_table', 2),
-(11, '2020_04_15_200601_create_choosecourses_table', 2),
 (12, '2020_04_15_200719_create_notes_table', 2),
 (13, '2020_04_15_200736_create_notices_table', 2),
 (14, '2020_04_15_200847_create_results_table', 2),
-(17, '2020_04_24_064042_create_salaries_table', 3);
+(17, '2020_04_24_064042_create_salaries_table', 3),
+(18, '2020_05_01_122647_create_table_choose_courses', 4);
 
 -- --------------------------------------------------------
 
@@ -136,6 +145,14 @@ CREATE TABLE `notes` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`id`, `title`, `fileName`, `cid`, `created_at`, `updated_at`) VALUES
+(1, 'First post', 'public/assets/upload/1664859184456086.pdf', 3, '2020-04-24 07:04:04', '2020-04-24 07:04:04'),
+(2, 'Third post', 'public/assets/upload/1664859261256921.txt', 3, '2020-04-24 07:05:17', '2020-04-24 07:05:17');
 
 -- --------------------------------------------------------
 
@@ -189,11 +206,12 @@ CREATE TABLE `registrations` (
 INSERT INTO `registrations` (`id`, `name`, `email`, `password`, `phone`, `institution`, `parentName`, `parentEmail`, `parentPhone`, `qualification`, `salaryStatus`, `created_at`, `updated_at`) VALUES
 (1, 'Md. Amzad Hossain Jacky', 'jacky@gmail.com', '1', '01684069494', NULL, NULL, NULL, NULL, NULL, NULL, '2020-04-13 18:00:00', '2020-04-21 18:43:57'),
 (5, 'Rajdeep', 'rajdeep@gmail.com', '1', '01729924669', 'B Chowdhury Jacky', 'Khali Sarkar', 'khali@gamil.com', '01729924699', NULL, NULL, '2020-04-14 10:46:53', '2020-04-14 10:46:53'),
-(7, 'Riyad Hasan', 'riyad@gmail.com', '1', '01729924666', NULL, NULL, NULL, NULL, 'Bsc. Engineer in CSE', 1, '2020-04-14 12:17:36', '2020-04-24 00:44:51'),
+(7, 'Riyad Hasan', 'riyad@gmail.com', '1', '01729924666', NULL, NULL, NULL, NULL, 'Bsc. Engineer in CSE', 1, '2020-04-14 12:17:36', '2020-04-24 01:08:38'),
 (8, 'Khalid Hasan', 'khalid@gmail.com', '1', '01720089370', 'Cantonment', 'Malek Hasan', 'malek@gmail.com', '01729924667', NULL, NULL, '2020-04-15 11:08:45', '2020-04-15 11:08:45'),
 (15, 'Kamal Hossain', 'kamal@gmail.com', '1', '01729924777', 'Rohotomolla High school', 'Hazi Kaseh', 'kashem@gmail.com', '01729924234', NULL, NULL, '2020-04-22 19:24:35', '2020-04-22 19:24:35'),
-(17, 'Jahid Hasan', 'jahid@gmail.com', '1', '01729924677', NULL, NULL, NULL, NULL, 'Bsc. Computer Science', 1, '2020-04-23 04:46:49', '2020-04-24 00:44:57'),
-(18, 'Salma Rahman', 'salma@gmail.com', '1', '01729924345', NULL, NULL, NULL, NULL, 'Bsc. Software Engineering', 1, '2020-04-23 04:48:01', '2020-04-24 00:44:19');
+(17, 'Jahid Hasan', 'jahid@gmail.com', '1', '01729924677', NULL, NULL, NULL, NULL, 'Bsc. Computer Science', 1, '2020-04-23 04:46:49', '2020-04-24 01:26:23'),
+(18, 'Salma Rahman', 'salma@gmail.com', '1', '01729924345', NULL, NULL, NULL, NULL, 'Bsc. Software Engineering', NULL, '2020-04-23 04:48:01', '2020-04-24 00:44:19'),
+(19, 'Jacky', 'jak@gmail.com', '1', '01729924666', 'G.lab', 'Md. Awal Hossain', 'jackyzitu@gmail.com', '01729924660', NULL, NULL, '2020-04-24 21:41:52', '2020-04-24 21:41:52');
 
 -- --------------------------------------------------------
 
@@ -239,21 +257,20 @@ CREATE TABLE `salaries` (
 --
 
 INSERT INTO `salaries` (`id`, `tid`, `amount`, `created_at`, `updated_at`) VALUES
-(1, 18, 23000, '2020-04-24 00:44:19', '2020-04-24 00:44:19'),
-(2, 7, 25000, '2020-04-24 00:44:51', '2020-04-24 00:44:51'),
-(3, 17, 30000, '2020-04-24 00:44:57', '2020-04-24 00:44:57');
+(4, 7, 23000, '2020-04-24 01:08:38', '2020-04-24 01:37:26'),
+(5, 17, 32000, '2020-04-24 01:26:23', '2020-04-24 01:37:32');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `choosecourses`
+-- Indexes for table `choose_courses`
 --
-ALTER TABLE `choosecourses`
+ALTER TABLE `choose_courses`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `choosecourses_cid_foreign` (`cid`),
-  ADD KEY `choosecourses_uid_foreign` (`uid`);
+  ADD KEY `choose_courses_cid_foreign` (`cid`),
+  ADD KEY `choose_courses_uid_foreign` (`uid`);
 
 --
 -- Indexes for table `courses`
@@ -314,9 +331,9 @@ ALTER TABLE `salaries`
 --
 
 --
--- AUTO_INCREMENT for table `choosecourses`
+-- AUTO_INCREMENT for table `choose_courses`
 --
-ALTER TABLE `choosecourses`
+ALTER TABLE `choose_courses`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -329,19 +346,19 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `logins`
 --
 ALTER TABLE `logins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `notices`
@@ -353,7 +370,7 @@ ALTER TABLE `notices`
 -- AUTO_INCREMENT for table `registrations`
 --
 ALTER TABLE `registrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `results`
@@ -365,18 +382,18 @@ ALTER TABLE `results`
 -- AUTO_INCREMENT for table `salaries`
 --
 ALTER TABLE `salaries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `choosecourses`
+-- Constraints for table `choose_courses`
 --
-ALTER TABLE `choosecourses`
-  ADD CONSTRAINT `choosecourses_cid_foreign` FOREIGN KEY (`cid`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `choosecourses_uid_foreign` FOREIGN KEY (`uid`) REFERENCES `registrations` (`id`) ON DELETE CASCADE;
+ALTER TABLE `choose_courses`
+  ADD CONSTRAINT `choose_courses_cid_foreign` FOREIGN KEY (`cid`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `choose_courses_uid_foreign` FOREIGN KEY (`uid`) REFERENCES `registrations` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `courses`
