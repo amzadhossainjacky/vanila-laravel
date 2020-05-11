@@ -46,8 +46,7 @@ class AdminNotesController extends Controller
         $validation = Validator::make($request->all(), [
             'courseId'=>'required',
             'title' => 'required|max:255',
-            'file'=>'required',
-            'file'=>'mimes:pdf,doc,docx,PDF,DOC,DOCX,zip,ZIP,RAR,rar,txt | max:12000',
+            'fileDetails'=>'required | mimes:pdf,doc,docx,PDF,DOC,DOCX,zip,ZIP,RAR,rar,txt,TXT | max:12000'
 
         ]);
 
@@ -72,7 +71,7 @@ class AdminNotesController extends Controller
             $success =$file->move($upload_path,$full_file_name);
             $data->fileName =$file_url;
 
-            //data insert with file 
+            //data insert with file
             $data->save();
 
             return redirect()->back();

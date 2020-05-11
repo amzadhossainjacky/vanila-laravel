@@ -82,7 +82,7 @@
                             </div>
 
                             <div class="form-group">
-                                <h5>File</h5>
+                                <h5>File Details</h5>
                                 <input type="file" class="form-control" name="fileDetails">
                             </div>
                             <button type="submit" class="btn btn-info">Upload</button>
